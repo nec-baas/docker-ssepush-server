@@ -7,7 +7,7 @@ ADD logback.template.properties /etc/ssepush/
 ADD server.template.xml /
 
 # Fix permission
-RUN chmod -R ugo+rwx /etc/ssepush /opt /var/log/ssepush
+RUN chmod -R ugo+rwx /etc/ssepush /var/log/ssepush
 
 # Add startup script
 ADD bootstrap.sh /
