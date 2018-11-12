@@ -1,5 +1,5 @@
-NECモバイルバックエンド基盤 Dockerfile
-====================================
+SSE Push Server : Dockerfile
+============================
 
 NECモバイルバックエンド基盤サーバ (SSEPushサーバ)用のDockerfile
 
