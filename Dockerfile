@@ -21,7 +21,11 @@ EXPOSE 8080
 
 # Install SSEPush Server
 ENV SSEPUSH_VERSION 7.5.0
-ADD files/ssepush-server-$SSEPUSH_VERSION/ssepush.war /opt/tomcat/webapps/
+RUN cd /opt \
+    && wget --no-check-certificate https://github.com/nec-baas/ssepush-server/releases/download/v$SSEPUSH_VERSION/ssepush-server-$SSEPUSH_VERSION.tar.gz \
+    && tar xzf ssepush-server-$SSEPUSH_VERSION.tar.gz \
+    && cp ssepush-server-$SSEPUSH_VERSION/ssepush.war /opt/tomcat/webapps/ \
+    && /bin/rm -rf ssepush-server-$SSEPUSH_VERSION*
  
 CMD /bootstrap.sh
 

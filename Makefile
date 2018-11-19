@@ -4,10 +4,10 @@ VOLUME_OPTS = -v $(PWD)/logs:/opt/tomcat/logs:rw
 
 NAME = necbaas/ssepush-server
 
-all: download ssepush-server
+all: ssepush-server
 
-download:
-	@./download.sh
+#download:
+#	@./download.sh
 
 ssepush-server: Dockerfile
 	docker build -t $(NAME) .
