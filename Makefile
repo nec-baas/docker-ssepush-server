@@ -10,19 +10,17 @@ all: ssepush-server
 #	@./download.sh
 
 ssepush-server: Dockerfile
-	docker build -t $(NAME) .
-
-clean:
+	docker image build -t $(NAME) .
 
 rmi:
-	docker rmi $(NAME)
+	docker image rmi $(NAME)
 
 bash:
-	docker run -it --rm $(NAME) /bin/bash
+	docker container run -it --rm $(NAME) /bin/bash
 
 start:
-	docker run -d $(PORT_OPTS) $(VOLUME_OPTS) $(NAME)
+	docker container run -d $(PORT_OPTS) $(VOLUME_OPTS) $(NAME)
 
 push:
-	docker push $(NAME)
+	docker image push $(NAME)
 
