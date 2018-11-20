@@ -36,4 +36,4 @@ cat /etc/ssepush/logback.template.properties \
     > /etc/ssepush/logback.properties
  
 # tomcat 起動 (foreground)
-/opt/tomcat/bin/catalina.sh run
+exec /opt/tomcat/bin/catalina.sh run
