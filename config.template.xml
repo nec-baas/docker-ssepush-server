@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="amqpUri">%AMQP_URI%</entry>
-    <entry key="heartbeatIntervalSec">%HEART_BEAT_INTERVAL_SEC%</entry>
+    <entry key="amqpUri">$AMQP_URI</entry>
+    <entry key="heartbeatIntervalSec">$HEART_BEAT_INTERVAL_SEC</entry>
 </properties>
