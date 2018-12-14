@@ -3,7 +3,7 @@ FROM necbaas/tomcat
 # Install SSEPush Server
 ENV SSEPUSH_VERSION 7.5.0
 RUN cd /opt \
-    && wget --no-check-certificate https://github.com/nec-baas/ssepush-server/releases/download/v$SSEPUSH_VERSION/ssepush-server-$SSEPUSH_VERSION.tar.gz \
+    && aria2c -x5 --check-certificate=false https://github.com/nec-baas/ssepush-server/releases/download/v$SSEPUSH_VERSION/ssepush-server-$SSEPUSH_VERSION.tar.gz \
     && tar xzf ssepush-server-$SSEPUSH_VERSION.tar.gz \
     && cp ssepush-server-$SSEPUSH_VERSION/ssepush.war /opt/tomcat/webapps/ \
     && /bin/rm -rf ssepush-server-$SSEPUSH_VERSION*
