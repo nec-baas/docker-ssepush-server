@@ -1,8 +1,10 @@
+NAME = necbaas/ssepush-server
+
 PORT_OPTS = -p 38080:8080
 
 VOLUME_OPTS = -v $(PWD)/logs:/opt/tomcat/logs:rw
 
-NAME = necbaas/ssepush-server
+PROXY = --build-arg http_proxy=$(http_proxy) --build-arg https_proxy=$(http_proxy)
 
 all: ssepush-server
 
@@ -10,7 +12,7 @@ all: ssepush-server
 #	@./download.sh
 
 ssepush-server: Dockerfile
-	docker image build -t $(NAME) .
+	docker image build $(PROXY) -t $(NAME) .
 
 rmi:
 	docker image rmi $(NAME)
