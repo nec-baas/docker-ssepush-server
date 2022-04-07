@@ -1,7 +1,7 @@
-FROM necbaas/tomcat
+FROM necbaas/tomcat:9.0.62
 
 # Install SSEPush Server
-ENV SSEPUSH_VERSION 7.5.0
+ENV SSEPUSH_VERSION 7.5.1
 RUN cd /opt \
     && aria2c -x5 --check-certificate=false https://github.com/nec-baas/ssepush-server/releases/download/v$SSEPUSH_VERSION/ssepush-server-$SSEPUSH_VERSION.tar.gz \
     && tar xzf ssepush-server-$SSEPUSH_VERSION.tar.gz \
